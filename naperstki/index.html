@@ -65,53 +65,93 @@ object.onkeydown = function(){myScript};
 
 
 var count = 0;
+var win = false;
 
 var naperstkiWork = document.querySelector('.naperstki');
 
 naperstkiWork.onclick = function() {
-	naperstkiWork.src = "pic2.png"
-	alert('Fail! Try again!')
-	count++
+	if (win == false) {
+		if (count > 2) {
+			alert('GameOver!')
+		} else {
+			if (naperstkiWork.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+				naperstkiWork.src = "pic2.png"
+				alert('Fail! Try again!')
+				count++
+			} else {
+				alert('ВЫ уже открыли карту')
+			}
+		}
+	} else {
+		alert('You win! Great job!')
+	}
 }
 
 var naperstkiWorkOne = document.querySelector('.naperstki-one');
 
 naperstkiWorkOne.onclick = function() {
-	naperstkiWorkOne.src = "pic2.png"
-	alert('Fail! Try again!')
-	count++
+	if (count >= 2) {
+		alert('GameOver!')
+	} else {
+		if (naperstkiWorkOne.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+			naperstkiWorkOne.src = "pic2.png"
+			alert('Fail! Try again!')
+			count++
+		} else {
+			alert('ВЫ уже открыли карту')
+		}
+	}
 }
 
 var naperstkiWorkTwo = document.querySelector('.naperstki-two');
 
 naperstkiWorkTwo.onclick = function() {
-	if (count > 3) {
-	alert('Game Over!');
+	if (count >= 2) {
+		alert('GameOver!')
+	} else {
+		if (naperstkiWorkTwo.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+			naperstkiWorkTwo.src = "pic2.png"
+			alert('Fail! Try again!')
+			count++
+		} else {
+			alert('ВЫ уже открыли карту')
+		}
 	}
-	naperstkiWorkTwo.src = "pic2.png"
-	alert('Fail! Try again!')
-	count++
 }
 
 var naperstkiWorkTree = document.querySelector('.naperstki-three');
 
 naperstkiWorkTree.onclick = function() {
-	naperstkiWorkTree.src = "pic3.jpg"
-	alert('Win! Great job!')
-	count++
+	if (count >= 2) {
+		alert('GameOver!')
+	} else {
+		if (naperstkiWorkTree.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+			naperstkiWorkTree.src = "pic3.jpg"
+			alert('Great job! you win!')
+			win = true;
+			count++
+		} else {
+			alert('ВЫ уже открыли карту')
+		}
+	}
 }
 
 var naperstkiWorkFour = document.querySelector('.naperstki-four');
 
 naperstkiWorkFour.onclick = function() {
-	naperstkiWorkFour.src = "pic2.png"
-	alert('Fail! Try again!')
-	count++
+	if (count >= 2) {
+		alert('GameOver!')
+	} else {
+		if (naperstkiWorkFour.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+			naperstkiWorkFour.src = "pic2.png"
+			alert('Fail! Try again!')
+			count++
+		} else {
+			alert('ВЫ уже открыли карту')
+		}
+	}
 }
 
-if (count > 3) {
-	alert('Game Over!');
-}
 
 </script>
 </body>
