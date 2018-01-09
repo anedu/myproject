@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Повтор</title>
+</head>
+<body>
+<script type="text/javascript">
+/* Тип данных
+- динамическое преобразование данных
+- Число
+- Строка
+- булевы
+- массив
+- объект
+- функция (аргумент)
+*/
+
+var computerModel = "Macbook";
+
+var musicPlay = true;
+
+var outpatientСard = ["Иванов", "Петров", "Сидоров", "Марков", "Кузьмин", "Захаров"];
+
+var emptyArray = [];
+
+var enemy = 80;
+
+var stuff = {};
+
+stuff.letter = "Text";
+stuff.medicine = 10;
+stuff.gun = function (bullet) {
+	if (bullet > enemy) {
+		enemy = 0;
+		console.log("Количество врагов: " + enemy);
+	} else {
+		enemy = enemy - bullet;
+		console.log("Количество врагов: " + enemy);
+
+	}
+}
+</script>
+</body>
+</html>
