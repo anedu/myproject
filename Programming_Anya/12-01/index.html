@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Поле чудес</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="block">
+		<div class="close-one"></div><h1 class="letter-one">в</h1>
+		<div class="close-two"></div><h1 class="letter-two">о</h1>
+		<div class="close-three"></div><h1 class="letter-three">д</h1>
+		<div class="close-four"></div><h1 class="letter-four">а</h1>
+	</div>
+
+<script type="text/javascript">
+/*
+Поле чудес:
+1)
+На странице 4 дива и 4 заголовка.
+
+Кликаю на див -> выходит промпт("Введите букву:").
+
+Если ответ правильный, то дисплей дива - нон, и дисплей заголовка - флекс.
+
+
+Как скрыть один элемент и проявить другой:
+Оба тэга находятся в одном диве.
+
+нахожу через querySelector один тэг, нахожу через querySelector другой элемент при клике на onclick на один элемент, один элемент дисплей - none, другой flex.
+
+
+При клике на букву выходит prompt('Введите букву: ')
+Если буква введена правильно, то Буква заменяется.
+Если не правильно выходит alert("Неправильно").
+
+2)
+если все буквы открыты, алерт "автомобиль ваш".
+
+функция, которая создает пустой массив и наполняет его элементами.
+
+значения правильных ответов записываются в массив. Если все элементы массива правильные значения, то алерт ("Автомобиль ваш!")
+
+
+
+3)
+есть очки. за 1 угаданную букву + очки,
+если (буква display == flex) то очки = очки + 10;
+
+
+
+за не 1 угаданную букву - очки,
+если (квадрат display == flex) то очки = очки - 10;
+
+
+если очки = 0 игра проиграна алерт вы проиграли.
+
+if count < 0;
+
+очки < 0, алерт("Вы проиграли.")
+
+после 3-х попыток нажать ни на что нельзя, т.е. дисплей у дива и заголовка не меняется. выводится сообщение "вы проиграли".
+
+надо чтобы счет считался вне клика. т.е. в какой момент времени.
+
+если (счет <= -30) {
+		kvadratOne.style.display = "flex"
+		bukvaOne.style.display = "none"
+		alert("Вы проиграли")
+} иначе  (счет > -30) {
+	var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+	if (answer == "в") {
+		kvadratOne.style.display = "none";
+		bukvaOne.style.display = "flex";
+		счет = счет + 10
+	else {
+		alert("Ответ неправильный. Попробуйте снова");
+		count = count - 10;
+}
+
+
+4)
+Сделать из кода функцию-конструктор
+
+создала переменную квадратуан и положила в нее функцию квериселектор с аргументом клозУан тэга див объекта документ. 
+
+присваиваю элементу онклик переменной квадратуан функцию. функция запускается, когда в браузере кликают по диву.
+
+!АРХИТЕКТУРА!
+
+Объявляем переменную youWin, которая хранит тип данных пустой массив.
+
+Объявляем переменную count, которая хранит тип данных число 0.
+
+Объявляем переменную kvadratOne, которая хранит тип данных объект (который преобразован из тэга div).
+
+Объявляем переменную bukvaOne, которая хранит тип данных объект (который преобразован из тэга h1).
+
+Объявляем переменную check, которая хранит тип данных функция.
+
+Обращаемся к элементу onclick (который является функцией) объекта kvadratOne и присваиваем ему новую функцию:
+- В какой момент вызывается функция kvadratOne.onclick? Когда в окне браузера мы нажимаем клик мышью по объекту kvadratOne (который является дивом).
+
+- (Если Счет <= -30) {
+	у элемента дисплей элемента стайл объекта kvadratOne (у div селектор по классу close-one свойство display поменять на none) поменять значение на "flex",
+
+	у элемента дисплей элемента стайл объекта bukvaOne (у заголовка h1 селектор по классу свойство display поменять на none) поменять значение на "flex",
+
+	вывести сообщение "Вы проиграли"
+} иначе {
+	объявляем переменную answer в которую сохраняем значение введеное в функцию prompt.
+	если (значение переменной answer == "в") {
+		у элемента дисплей элемента стайл объекта kvadratOne значение меняется на "none"
+		у элемента дисплей элемента стайл объекта bukvaOne значение меняется на "flex"
+		увеличиваем значение переменной счет на + 10.
+	} иначе {
+		вывести сообщение "Вы проиграли"
+		уменьшаем значение переменной счет на - 10.
+	}
+
+	записываем в переменную youWin в элемент с индексом 0 массива значение переменной ответ.
+	вызываем функцию чек.
+
+var youFail = function() {
+
+}
+
+вначале я проверяю на счет.
+если (счет <= -30) {
+	задаем значение "флекс" элементу дисплей элемента стайл объекта квадратУан.
+	задаем значение "нон" элементу дисплей элемента стайл объекта букваУан.
+	выводим сообщение "Вы проиграли"
+} иначе {
+	выводим сообщение со строкой ввода "Из чего состоит человек на 80%? Введите букву: " и сохраняем значение в переменную Ответ.
+	если (ответ == "в") {
+		задаем значение нон элементу дисплей элемента стайл объекта квадратУан.
+		задаем значение флекс элементу дисплей элемента стайл объекта букваУан.
+		увеличиваем значение переменной счет на + 10
+	} иначе {
+		выводим сообщение "Ответ неправильный. Попробуйте снова"
+		уменьшаем значение переменной счет - 10
+		если (счет <= -30) {
+			задаем значение "флекс" элементу дисплей элемента стайл объекта квадратУан.
+			задаем значение "нон" элементу дисплей элемента стайл объекта букваУан.
+			выводим сообщение "Вы проиграли"			
+		}
+	}
+}
+
+у меня повторяется код в 2-х местах. Значит его нужно вынести в функцию. Функция - это действие. 
+
+*/
+var youWin = [];
+var count = 0;
+
+var kvadratOne = document.querySelector('.close-one');
+var bukvaOne = document.querySelector('.letter-one');
+
+var youFail = function(div, h1) {
+	div = "flex";
+	h1 = "none";
+	alert("Вы проиграли. Езжайте домой в Рязань :)");		
+}
+
+
+
+kvadratOne.onclick = function () {
+	if (count <= -30) {
+		youFail("kvadratOne.style.display", "bukvaOne.style.display");	
+	} else {
+		var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+		if (answer == "в") {
+			kvadratOne.style.display = "none";
+			bukvaOne.style.display = "flex";
+			count = count + 10;
+		} else {
+			alert("Ответ неправильный. Попробуйте снова");
+			count = count - 10;
+			if (count <= -30) {
+				youFail("kvadratOne.style.display", "bukvaOne.style.display");
+			}
+		}
+	}
+
+	youWin [0] = answer;
+	check();
+}
+
+var kvadratTwo = document.querySelector('.close-two');
+var bukvaTwo = document.querySelector('.letter-two');
+
+kvadratTwo.onclick = function () {
+	if (count <= -30) {
+		youFail("kvadratTwo.style.display", "bukvaTwo.style.display");		
+	} else {
+		var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+		if (answer == "о") {
+			kvadratTwo.style.display = "none";
+			bukvaTwo.style.display = "flex";
+			count = count + 10;
+		} else {
+			alert("Ответ неправильный. Попробуйте снова");
+			count = count - 10;
+			if (count <= -30) {
+				youFail("kvadratTwo.style.display", "bukvaTwo.style.display");
+			}
+		}
+	}
+
+	youWin [0] = answer;
+	check();
+}
+
+var kvadratThree = document.querySelector('.close-three');
+var bukvaThree = document.querySelector('.letter-three');
+
+kvadratThree.onclick = function () {
+	if (count <= -30) {
+		youFail("kvadratThree.style.display", "bukvaThree.style.display")	
+	} else {
+		var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+		if (answer == "д") {
+			kvadratThree.style.display = "none";
+			bukvaThree.style.display = "flex";
+			count = count + 10;
+		} else {
+			alert("Ответ неправильный. Попробуйте снова");
+			count = count - 10;
+			if (count <= -30) {
+				youFail("kvadratThree.style.display", "bukvaThree.style.display")	
+			}
+		}
+	}
+
+	youWin [0] = answer;
+	check();
+}
+
+var kvadratFour = document.querySelector('.close-four');
+var bukvaFour = document.querySelector('.letter-four');
+
+kvadratFour.onclick = function () {
+	if (count <= -30) {
+		youFail("kvadratFour.style.display", "bukvaFour.style.display")		
+	} else {
+		var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+		if (answer == "а") {
+			kvadratFour.style.display = "none";
+			bukvaFour.style.display = "flex";
+			count = count + 10;
+		} else {
+			alert("Ответ неправильный. Попробуйте снова");
+			count = count - 10;
+			if (count <= -30) {
+				youFail("kvadratFour.style.display", "bukvaFour.style.display")	
+			}
+		}
+	}
+
+	youWin [0] = answer;
+	check();
+}
+
+var check = function() {
+	if (youWin [0] == "в" && youWin [1] == "о" && youWin [2] == "д" && youWin [3] == "а") {
+		alert("Поздравляем! Ааавввтомобиииль Ваааш!");
+	}
+}
+</script>
+</body>
+</html>

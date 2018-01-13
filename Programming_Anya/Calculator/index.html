@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css" />
+	<title>Онлайн калькулятор ипотеки</title>
+</head>
+<body>
+	<div class="look"></div>
+	<div class="osnovnoi-block">
+		<div class="block-vvoda">
+			<h1>Добро пожаловать на сайт онлайн калькулятора ипотечных кредитов!</h1>
+			<p>Введите размер зарплаты</p>
+			<input placeholder="Сумма зарплаты" class="zarplata"/>
+			<p>Введите ваш возраст</p>
+			<input placeholder="Ваш возраст" class="vozrast">
+			<p>Введите количество детей</p>
+			<input placeholder="Количество детей" class="deti">
+			<p>Введите сумму ипотеки</p>
+			<input placeholder="Сумма кредита" class="ipoteka"/>
+			<button class="raschitat">ok</button>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+/*
+	Ипотечный калькулятор, который выводит информацию об одобрении или отказе в ипотечном кредите.
+	4 переменные: 
+	- размер запрлаты,
+	- размер кредита,
+	- кол-во детей,
+	- возраст.
+
+	если (зп >= 10 && зп <= 30) {
+		если (возраст >= 21 возраст && < 75) {
+			если (дети ==0) {
+				если (ипотека > 0 && ипотека <= 1000) {
+					alert(Поздравляем! Ваш кредит одобрен)
+				}
+			}
+		}
+	} тогда если (зп >= 30 && зп <= 100) {
+		если (возраст >= 21 возраст && < 75) {
+			если (дети > 0 && дети <= 2) {
+				если (ипотека > 0 && ипотека <= 2000) {
+					alert(Поздравляем! Ваш кредит одобрен)
+				}
+			}
+		} иначе {
+			alert(Поздравляем! Ваш кредит одобрен)
+		}
+		
+	} тогда если (зп > 100) {
+		если (возраст >= 21 возраст && < 75) {
+			alert(Поздравляем! Ваш кредит одобрен)
+		}
+	} иначе {
+		alert(Извините, вам отказано в кредите.)
+	}
+*/
+var ggg = 10;
+var dof = "fojf";
+var dof = false;
+
+var zarplata = document.querySelector('.zarplata');
+var ipoteka = document.querySelector('.ipoteka');
+var knopka = document.querySelector('.raschitat');
+var vozrast = document.querySelector('.vozrast');
+var deti = document.querySelector('.deti')
+knopka.onclick = function() {
+	if(zarplata.value && ipoteka.value && deti.value && vozrast.value) {
+		if (zarplata.value >= 10 && zarplata.value <= 30) {
+			if (vozrast.value >= 21 && vozrast.value < 75) {
+				if (deti.value == 0) {
+					if (ipoteka.value > 0 && ipoteka.value <= 1000) {
+						alert('Поздравляем! Ваш кредит одобрен.')
+					} else alert('Извините, попробуйте взять сумму меньше.')
+				} else alert('Извините, у вас не хватает суммы дохода на всю семью.')
+			} else alert('Извините, вы не подходите по возрасту.')
+		} else if (zarplata.value >= 30 && zarplata.value <= 100) {
+			if (vozrast.value >= 21 && vozrast.value < 75) {
+				if (deti.value > 0 && deti.value <= 2) {
+					if (ipoteka.value > 0 && ipoteka.value <= 2000) {
+						alert('Поздравляем! Ваш кредит одобрен.')
+					} else alert('Извините, попробуйте взять сумму меньше.')
+				} else alert('Извините, у вас не хватает суммы дохода на всю семью.')
+			} else alert('Извините, вы не подходите по возрасту.')
+		} else if (zarplata.value > 100) {
+			if (vozrast.value >= 21 && vozrast.value < 75) {
+				if (ipoteka.value > 0 && ipoteka.value <= 10000) {
+					alert('Поздравляем! Ваш кредит одобрен.')
+				} else alert('Извините, введите другую сумму кредита.')
+			} else alert('Извините, вы не подходите по возрасту.')
+		} else alert('Сумма кредита должна быть меньше 10000 или вы ввели неверное значение.')
+	} else {
+		if(!zarplata.value) {
+			alert("Вы не ввели зарплату")
+		} else if(!ipoteka.value) {
+			alert("Вы не ввели ипотеккуы")
+		}
+	}
+}
+
+
+/*knopka.onclick = function() {
+	if (zarplata.value >= 30) {
+		if (ipoteka.value > 0 && ipoteka.value <= 1000) {
+			alert('Поздравляем! Ответ: ДА')
+		} else if (ipoteka.value > 1000) {
+			alert('Извините, попробуйте сумму меньше.')
+		} else {
+
+		}
+	} else if(zarplata.value < 10 ){
+		alert('Извините. Ответ: НЕТ')
+	}
+	else {
+		alert('Извините. Ответ: НЕТ')
+	}
+} */
+</script>
+</html>

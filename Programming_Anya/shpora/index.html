@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Повтор</title>
+</head>
+<body>
+<script type="text/javascript">
+/* Тип данных
+- динамическое преобразование данных
+- Число
+- Строка
+- булевы
+- массив
+- объект
+- функция (аргумент)
+*/
+var computerModel = "Macbook";
+
+
+
+var musicPlay = true;
+
+var outpatientСard = [
+	"Иванов",
+	function (x, y) {
+		console.log(x + y)
+	},
+	[
+		"a", 
+		"b", 
+		"c"
+	],
+	"Петров", 
+	"Сидоров", 
+	"Марков", 
+	"Кузьмин", 
+	"Захаров"
+];
+
+var emptyArray = [];
+
+emptyArray [7] = "Данилов";
+
+var enemy = 80;
+
+var menu = {
+	"drink": "juise",
+	"dish": "potato",
+	"chislo": 1,
+	"key": {
+		"a": "b",
+		"c": "d",
+		"massiv": [
+			false,
+			23,
+			"rd",
+			function () {
+				var run = 1;
+				run++;
+				console.log(run)			}
+		],
+	}
+}
+
+//Пустой объект, который мы наполняем через короткую запись (синтаксический сахар).
+var stuff = {};
+stuff.letter = "Text";
+stuff.medicine = 10;
+//функция, которая возращает undefined. Потому что она просто совершает какое то действие. Вначале проверяет условие и в зависимости от выполнения условия презаписывает значение переменной enemy + выводит на экран строку и новое значение enemy.
+
+stuff.gun = function (bullet) {
+	if (bullet > enemy) {
+		enemy = 0;
+		console.log("Количество врагов: " + enemy);
+	} else {
+		enemy = enemy - bullet;
+		console.log("Количество врагов: " + enemy);
+	}
+
+}
+
+//undefined.
+var summa = function (x, y) {
+	x + y
+	console.log(x + y);
+};
+
+summa(5, 6);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Города</title>
+</head>
+<body>
+<img src="moscow.jpg" width="300" class="moscow">
+<img src="ny.jpg" width="300" class="ny">
+<img src="london.jpg" width="300" class="london" style="background: red">
+
+<script type="text/javascript">
+
+/*Архитектура:
+
+2 объекта:
+москва = {
+	"количество людей": 1000,
+	функция атаковать: уменьшает кол-во жителей другого города
+}
+
+нью йорк = {
+	кол-во: людей
+	атакаМосквы: function (patroni) {
+		москва.количествоЛюдей = москва.количествоЛюдей - patroni;
+	}
+}
+
+если (людей нью йорка <= 0) {
+	Поздравляем! Вы победили
+} 
+
+иначе {
+	если (людей нью йорка - выстрел > 50) {
+		люди ню = люди ню - выстрел
+		вывод: осталось людей: люди ню
+	}
+
+	если тогда (людей ню - выстрел > 0 && <= 50) {
+		люди ню = люди ню - выстрел
+		сообщение: "Нас " + люди ню + " мы сдаемся"
+	}
+
+	иначе {
+		люди ню = 0
+		вывод: вы всех убили
+	}
+}
+
+Сделать чтобы с помощью конструктора (функция с ретурном) создавался объект и 3 переменные, которые при вызове функции сохраняют созданный объект в переменные.
+
+3 картинки городов. При вызове функции атака, и уничтожении города - картинка города исчезает.
+
+найти тэг с классом "moscow" через document.querySelector('.moscow'), если в переменной moscow элемент moscow.people == 0, то в переменной imgMoscow атрибут отображение display: none.
+
+*/
+
+var makeCity = function(name, img) {
+	var city = {};
+	city.nation = race [Math.floor(Math.random() * 6)]
+	city.img = document.querySelector(img);
+	city.name = name;
+	city.people = Math.floor(Math.random() * 4000);
+	city.ataka = function (vistrel, target) {
+		console.log(target);
+		if (target.people <= 0) {
+			console.log("Поздравляем! Вы победили.")
+		} else {
+			if (target.people - vistrel > 50) {
+				target.people = target.people - vistrel;
+				console.log('В ' + target.name + ' осталось людей: ' + target.people);
+			} else if (target.people - vistrel > 0 && target.people - vistrel <= 50) {
+				target.people = target.people - vistrel
+				console.log("Нас " + target.people + " мы сдаемся!")
+			} else {
+				target.people = 0;
+				console.log("Вы всех убили в " + target.name)
+				target.img.style.display = "none"
+			}			
+		}
+	}
+	return city;
+}
+
+var race = [
+	"german",
+	"russian",
+	"american",
+	"african",
+	"итальянцы",
+	"испанцы"]
+
+var moscow = makeCity("Москва", ".moscow");
+var newYork = makeCity("Нью-Йорк", ".ny");
+var london = makeCity("Лондон", ".london");
+
+/*
+var imgMoscow = document.querySelector('.moscow');
+
+if (target.people == 0) {
+	imgMoscow.style.display = "none"
+}
+*/
+
+/*
+var moscow = {
+	"name": "moscow",
+	"people": 1000,
+	"ataka": function (vistrel, city) {
+		if (city.people <= 0) {
+			console.log("Поздравляем! Вы победили.")
+		} else {
+			if (city.people - vistrel > 50) {
+				city.people = city.people - vistrel;
+				console.log('Осталось людей: ' + city.people);
+			} else if (city.people - vistrel > 0 && city.people - vistrel <= 50) {
+				city.people = city.people - vistrel
+				console.log("Нас " + city.people + " мы сдаемся!")
+			} else {
+				city.people = 0;
+				console.log("Вы всех убили")
+			}			
+		}
+	}
+}
+
+var newYork = {
+	"name": "new york",
+	"people": 2000,
+	"ataka": function (vistrel, city) {
+		if (city.people <= 0) {
+			console.log("Поздравляем! Вы победили.")
+		} else {
+			if (city.people - vistrel > 50) {
+				city.people = city.people - vistrel;
+				console.log('Осталось людей: ' + city.people);
+			} else if (city.people - vistrel > 0 && city.people - vistrel <= 50) {
+				city.people = city.people - vistrel
+				console.log("Нас " + city.people + " мы сдаемся!")
+			} else {
+				city.people = 0;
+				console.log("Вы всех убили")
+			}			
+		}
+	}
+}
+
+var london = {
+	"name": "london",
+	"people": 3000,
+	"ataka": function (vistrel, city) {
+		if (city.people <= 0) {
+			console.log("Поздравляем! Вы победили.")
+		} else {
+			if (city.people - vistrel > 50) {
+				city.people = city.people - vistrel;
+				console.log('Осталось людей: ' + city.people);
+			} else if (city.people - vistrel > 0 && city.people - vistrel <= 50) {
+				city.people = city.people - vistrel
+				console.log("Нас " + city.people + " мы сдаемся!")
+			} else {
+				city.people = 0;
+				console.log("Вы всех убили")
+			}			
+		}
+	}
+}
+Целое рандомное число от 0 до 13.
+*/
+</script>
+</body></html>

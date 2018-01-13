@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+/*
+Функция, которая рандомно выдает да или нет.
+Если (Math.random() > 0.5) {
+	то console.log("yes")
+} else { console.log("no")
+}
+
+
+генератор ругательств:
+
+состоит из 3 частей:
+- обращение кто: "они", "вы", "ты"
+- прилагательное: "тупой", "дурацкий",
+- существительное: "балбес", "идиот",
+
+функция возвращает готовое ругательство.
+
+каждый раз вызываем функцию, она возвращает случайное ругательство.
+
+
+*/
+
+var who = [
+	"вы",
+	"ты",
+	"они",
+	"dfsp",
+	"dffe",
+	"dfe",
+	"оs",
+	"wer"]
+
+var adjective = [
+	"тупой",
+	"дурацкий",
+	"глупый"]
+
+var noun = [
+	"балбес",
+	"идиот",
+	"придурок"]
+
+var rugatelstvo = function () {
+	return who [makeRandom(who.length)] + ' ' + 
+		adjective [makeRandom(adjective.length)] + ' ' + 
+		noun [makeRandom(noun.length)]
+	
+}
+
+var makeRandom = function(predel) {
+	return Math.floor(Math.random() * predel)
+}
+
+
+var save = rugatelstvo();
+
+/*
+var randomYesOrNo = function () {
+	if (Math.random() > 0.5) {
+		console.log("yes")
+	} else {
+		console.log("no")
+	}
+}
+
+randomYesOrNo();
+*/
+</script>
+</body>
+</html>

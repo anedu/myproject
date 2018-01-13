@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nana Komatsu</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="header">
+			<div>
+				<img class="logo-vk-com" src="vk-com.png">
+				<input id="search" placeholder="Поиск"/>
+				<img class="ava" src="pic1.jpg">
+			</div>
+		</div>
+		<div class="osnovnoi-block">
+			
+			<div>
+				<ul class="ul">
+					<li><a href="index.html">Моя страница</a></li>
+					<li><a href="#">Новости</a></li>
+					<li><a href="#">Сообщения</a></li>
+					<li><a href="#">Друзья</a></li>
+					<li><a href="#">Группы</a></li>
+					<li><a href="#">Фотографии</a></li>
+					<li><a href="#">Музыка</a></li>
+					<li><a href="#">Видео</a></li>
+					<li><a href="№">Игры</a></li>
+				</ul>
+
+				<hr />
+
+				<ul class="ul">
+					<li><a href="index.html">Товары</a></li>
+					<li><a href="">Закладки</a></li>
+					<li><a href="">Документы</a></li>
+				</ul>
+
+			</div>
+
+				
+
+			<div class="block-page">
+				<div class="otstupi">
+					<div>
+						<div class="border" >
+							<img class="navesti-kursor" src="pic1.jpg" height="300">
+						</div>
+
+						<p>
+							<button onclick="document.querySelector('.button-js').style.background='red'">Написать сообщение</button>
+						</p>
+
+						<p>
+							<button class="button-js">Добавить в друзья</button>
+						</p>
+					</div>
+
+					<div>
+						<div>
+							<div>Друзья 356</div>
+							<div class="flex">
+								<div class="friends-otstupi">
+									<img class="friends" src="pic1.jpg">
+									<div class="font-size-friends">Иван Иванов</div>
+								</div>
+								
+								<div class="friends-otstupi">
+									<img class="friends" src="pic2.jpg">
+									<div class="font-size-friends">Иван Иванов</div>
+								</div>
+								
+								<div class="friends-otstupi">
+									<img class="friends" src="pic3.jpg">
+									<div class="font-size-friends">Иван Иванов</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="otstupi">
+					<div class="block">
+						
+						<h3>Nana Komatsu</h3>
+						
+
+						<div>
+							Дата рождения: 1 января
+						</div>
+
+						<div>
+							356 друзей 62 подписчиков 4 фотографии
+						</div>
+					</div>
+
+					<div class="block flex">
+						<div>
+							Фотографии Nana Komatsu 4
+						</div>
+
+						<img src="pic2.jpg" height="50" width="50">
+						<img src="pic3.jpg" height="50" width="50">
+						<img src="pic4.jpg" height="50" width="50">
+						
+					</div>
+
+					<div  class="block">
+						<div>
+							<a href="#">Записи Nana Komatsu</a>
+						</div>
+
+						<div>
+							<img src="pic5.jpg" class="img-stena">
+							<div>
+								<img class="logo-like" src="hearts.png">
+							</div>
+
+							<div class="flex like-it">
+								Мне нравится
+							</div>
+						</div>
+
+						<div>
+							<img src="pic6.jpg" class="img-stena">
+							<div>
+								<img class="logo-like" src="hearts.png">
+								Мне нравится
+							</div>
+						</div>
+
+						<div>
+							<img src="pic7.jpg" class="img-stena">
+							<div>
+								<img class="logo-like" src="hearts.png">
+							</div>
+
+							<div class="flex like-it">
+								Мне нравится
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript">
+
+		/*
+		Ставим-убираем лайк:
+		Присваиваем переменной logoLike = найти в документе с помощью функции querySelector Тэг (html-элемент) с классом logo-like
+		
+		При клике на элемент с классом logo-like:
+		если (у этого элемента атрибут src ссылка = hearts-filled.png) {
+			меняем атрибут src ссылка на = hearts.png
+		}
+
+		иначе если (у этого элемента атрибут src ссылка = hearts.png) {
+			меняем атрибут src ссылка на = hearts-filled.png
+		}
+		*/
+
+		var logoLike = document.querySelector('.logo-like');
+
+		logoLike.onclick=function(){
+			if (logoLike.src == "file:///Users/annapc/Downloads/learn/vk/hearts-filled.png") {
+				logoLike.src = "file:///Users/annapc/Downloads/learn/vk/hearts.png"
+			}
+
+			else if (logoLike.src == "file:///Users/annapc/Downloads/learn/vk/hearts.png") {
+				logoLike.src = "file:///Users/annapc/Downloads/learn/vk/hearts-filled.png"
+			}
+
+
+		}
+
+		/* 
+		При наведении курсора на элемент img значение атрибута scr ссылка меняется на другую ссылку. 
+
+		var переменная avatarKursor = найти в документе с помощью функции querySelector Тэг (html-элемент) с классом class="navesti-kursor"
+
+		Наводим курсор onmouseover () на переменную avatarKursor {
+			атрибут scr: ссылка меняется на другую pic4.jpg {
+		}
+		object.onkeydown = function(){myScript};
+		*/
+
+		var avatarKursor = document.querySelector('.navesti-kursor');
+
+		avatarKursor.onmouseover=function(){
+			avatarKursor.src ="file:///Users/annapc/Downloads/learn/vk/pic4.jpg"
+		}
+
+		/*Убираем курсор onmouseout с элемента {
+			атрибут scr: ссылка меняется на другую pic4.jpg {
+		}*/
+
+		avatarKursor.onmouseout=function(){
+			avatarKursor.src ='file:///Users/annapc/Downloads/learn/vk/pic1.jpg'
+		}
+
+		/*display: none
+		displayNoneImg = Находим хтмл элемент с id #search.
+		В этом хтмл элементе находим атрибут style в нем находим свойство display и меняем его на none.
+		*/
+		var displayNoneImg = document.querySelector('#search');
+
+		displayNoneImg.onkeydown = function() {
+			displayNoneImg.style.display = 'none';
+		}
+		
+
+
+		/* найти и сохранить в переменную razmerDruzei класс друзей.
+		увеличить картинку друзей при помощи onclick. Каждый раз при нажатии onclick в атрибуте style увеличить свойство width. 
+		если (width 50px) {
+			width 60px
+		}
+		если (width 60px) {
+			width 70px
+		}
+		если (width 70px) {
+			80px
+		}
+		*/
+		var razmerDruzei = document.querySelector('.friends');
+
+		var count = 0;
+		razmerDruzei.onclick = function() {
+			if (count == 0) {
+				razmerDruzei.style.width = '60px'
+				count = 1;
+			}
+
+			else if (count == 1) {
+				razmerDruzei.style.width = '70px'
+				count = 2;
+			}
+
+			else if (count == 2) {
+				razmerDruzei.style.width = '80px'
+			}
+		}
+
+		/*
+		найти элемент с классом header.
+
+		при нажатии любой клавиши {
+			цвет фона становится сиреневым
+		} */
+		var colorHeader = document.querySelector('.header');
+
+		colorHeader.onmouseover=function() {
+			colorHeader.style.background = '#C390D4'
+		}
+
+
+
+		/*
+			onclick - клик на элемент
+			onkeydown - нажатие клавиши (применяется только к полям)
+			onmouseover - навести курсор на объект
+			onmouseout - убрать курсор с объекта
+			querySelector - поиск информации (элемента на странице)
+			document - служебный объект.
+		*/
+
+		/*
+			Наперстки. 5 картинок. 
+			1 победная - alert(You win)
+			4 fail - you fail
+			3 картинки (закрытая, открытая, вин)
+		*/
+	</script>
+	</body>
+</html>

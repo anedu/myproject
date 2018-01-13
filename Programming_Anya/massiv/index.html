@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Наперстки</title>
+</head>
+<body>
+<button class="strelyat">Стрелять</button>
+
+<button class="perezaryad">Перезаряд</button>
+
+</body>
+
+<script type="text/javascript">
+/*
+var massiv = [];
+//функция, которая добавляет элемент (переменную) в массив.
+var addMassiv = function (index, znachenie) {
+	massiv [index] = znachenie;
+	console.log(massiv);
+}
+
+addMassiv (0, false);
+*/
+
+/*
+!АРХИТЕКТУРА!
+
+объект "персонаж".
+у него есть переменная - ammo (патроны).
+отдельная функция стрелять.
+Функция "стрелять" уменьшает (дискременент) количество патронов.
+Функция "перезарядить" обновляет количество патронов на начальное количество.
+
+2 кнопки, при клике на одну - стреляем, на другую - перезаряжаемся:
+Найти тэг в документе с классом "стрелять".
+Присоеденить к ней результат выполнения функции.
+
+
+*/
+var player = {
+	"patroni": 3,
+	"minusPatroni": function () {
+		if (player.patroni <= 0) {
+			console.log("Пожалуйста, перезарядите патроны.")
+		} else if (player.patroni > 0) {
+			player.patroni--
+			console.log(player.patroni)
+		}
+	},
+	"rebootPatroni": function () {
+		player.patroni = 3;
+		console.log(player.patroni);
+
+	}
+}
+
+var playerStrel = document.querySelector('.strelyat');
+playerStrel.onclick = player.minusPatroni;
+
+
+var playerPerezar = document.querySelector('.perezaryad');
+playerPerezar.onclick = player.rebootPatroni;
+
+
+
+</script>
+</html>

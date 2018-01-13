@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Наперстки</title>
+</head>
+<body>
+<input class="w" value="qqq" />
+
+
+<script type="text/javascript">
+/*
+
+Я хочу пойти в клуб. 
+Если (возраст > 18) {
+	то добро пожаловать! 
+} 
+Если иначе (< 18) {
+	Извините, вы не можете пройти.
+} 
+создаем переменную age. 
+
+*/
+
+	var text = "dfiof";
+	var number = 10;
+	var bool = true;
+
+	// Массив:
+	var books = [ "Пушкин", "Толстой", "Гоголь", false, 10 ];
+	// Объект:
+	var player = { "name": "Joker", "HP": 100 }
+	// Обращение к элементу (переменной) массива или объекта:
+	// по индексу:
+	books [0] = "Некрасов";
+	// по ключу, который задан в стринге
+	player ["name"] = "Batman";
+	// более удобное короткое обращение к элементу.
+	player.name = "Batman";
+
+	var number = 10;
+	//alert(number / player.hp);
+
+	//alert(player.hp);
+
+	if (player.hp > 2) {
+		//alert('feo')
+	}
+
+	var marvel = {
+		"hulk": "Mark Ruffalo", 
+		"captainAmerica": "Chris Evans", 
+		"ironMan": "Robert Downey", 
+		"thor": "Chris Hemsworth", 
+		"blackWidow": "Scarlett Johansson"
+	};
+
+	var joker = {
+		"name": "Joker", 
+		"height": 1.7, 
+		"weight": 71, 
+		"enemy": "Batman", 
+		"bad": true,
+		"sd": true
+	}
+
+	//if (joker.name) {
+		//alert("hello, world!")
+	//}
+
+	//alert(marvel.thor);
+
+	//alert(joker.bad);
+
+	/*string && number -> string
+	*string && bool -> NaN
+	bool && number -> number
+	string in if -> true
+	underfinded in if -> false
+	*/
+
+	/*
+	var number1 = function () {
+		diof++
+	}
+
+	var diof = 1;
+
+	var heightJoker = function () {
+		if (joker.height >= 1.7) {
+			alert("Джокер высокого роста") 
+		} else {
+			alert("Джокер низкого роста")
+		}
+	}
+
+	heightJoker ();
+	*/
+
+	// Создать функцию, которая создает новые элементы (переменные) в массиве Books.
+	var addToBooks = function () {
+		books [5] = "Есенин"
+		books [6] = 123
+		console.log(books)
+		console.log(books [5])
+	}
+	addToBooks ();
+
+
+	//Создать функцию, которая создает новые элементы в объекте.
+
+	//console.log - служебный объект, выводит элемент на экран.
+
+	var addToJoker = function () {
+		joker.hp = 99;
+		joker.name = "Batman";
+		console.log(joker);
+	}
+
+	addToJoker ();
+
+	//если переменная weight в объекте joker == 70.
+	var proverkaNaZnachenie = function () {
+		if (joker.weight == 70) {
+			console.log(joker.weight)
+		} else if (marvel.ironMan == "Robert Downey") {
+			console.log(marvel.ironMan)
+		} else {
+			console.log(joker.hp)
+		};
+	};
+
+	proverkaNaZnachenie ();
+
+	//Вывод в консоль суммы чисел 2 + 2. Результат: 4
+	var chislo; 
+	// переменная объявленная в момент вызова функции называется аргументом. аргументом может быть любой тип данных.
+	var summaChisel = function (x, y) {
+		chislo = x + y;
+		console.log(chislo)
+	}
+
+	summaChisel (1, 4);
+
+
+	var func = function(x) {
+		console.log(x)
+	}
+
+
+	
+
+	var onencdfo = function (y) {
+		func(y * y);
+	} 
+	
+
+
+	
+
+
+
+
+
+
+</script>
+</body>
+</html>

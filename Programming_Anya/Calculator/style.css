@@ -1,0 +1,20 @@
+body {
+	margin: 0;
+}
+
+.osnovnoi-block {
+	font-family: arial;
+	margin: 50px 300px 50px 300px;
+	background: #CCD9D3;
+}
+
+.block-vvoda {
+	padding: 30px;
+}
+
+.look {
+	width: 300px;
+	height: 400px;
+	background: yellow;
+	position: absolute;
+}

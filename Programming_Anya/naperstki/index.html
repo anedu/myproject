@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Наперстки</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div>
+		<img class="naperstki" src="pic1.png">
+		<img class="naperstki-one" src="pic1.png">
+		<img class="naperstki-two" src="pic1.png">
+		<img class="naperstki-three" src="pic1.png">
+		<img class="naperstki-four" src="pic1.png">
+	</div>
+
+<script type="text/javascript">
+/*onclick - клик на элемент
+Наперстки. 5 картинок. 
+1 победная - alert(You win)
+4 fail - you fail
+3 картинки (закрытая, открытая, вин)
+
+JS код:
+(клик на 1 картинку) {
+	вывод картинки фэйл
+	алерт вы проигр
+}
+
+(клик на 2 картинку) {
+	вывод картинки фэйл
+	алерт вы проигр
+}
+
+(клик на 3 картинку) {
+	вывод картинки фэйл
+	алерт вы проигр
+}
+
+ (клик на 4 картинку) {
+	вывод картинки вин
+	алерт вы выйграли
+}
+
+(клик на 5 картинку) {
+	вывод картинки фэйл
+	алерт вы проигр
+}
+
+2 попытки:
+после 2-х попыток алерт Исчерпали попытки.
+
+! АРХИТЕКТУРА:
+
+Если при клике на элемент с классом class="naperstki" атрибут src="pic1.jpg" значение ссылки меняется на pic2.jpg
+ТО count (счет) +1
+
+Если при клике на элемент с классом class="naperstki" атрибут src="pic1.jpg" значение ссылки меняется на pic2.jpg
+ТО count (счет) +1
+
+Если count = 2; ТО alert("GameOver") и остальные картинки не кликаются.
+
+object.onkeydown = function(){myScript};
+*/
+
+
+var count = 0;
+var win = false;
+
+var naperstkiWork = document.querySelector('.naperstki');
+
+naperstkiWork.onclick = function() {
+	if (win == false) {
+		if (count > 2) {
+			alert('GameOver!')
+		} else {
+			if (naperstkiWork.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+				naperstkiWork.src = "pic2.png"
+				alert('Fail! Try again!')
+				count++
+			} else {
+				alert('ВЫ уже открыли карту')
+			}
+		}
+	} else {
+		alert('You win! Great job!')
+	}
+}
+
+var naperstkiWorkOne = document.querySelector('.naperstki-one');
+
+naperstkiWorkOne.onclick = function() {
+	if (count >= 2) {
+		alert('GameOver!')
+	} else {
+		if (naperstkiWorkOne.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+			naperstkiWorkOne.src = "pic2.png"
+			alert('Fail! Try again!')
+			count++
+		} else {
+			alert('ВЫ уже открыли карту')
+		}
+	}
+}
+
+var naperstkiWorkTwo = document.querySelector('.naperstki-two');
+
+naperstkiWorkTwo.onclick = function() {
+	if (count >= 2) {
+		alert('GameOver!')
+	} else {
+		if (naperstkiWorkTwo.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+			naperstkiWorkTwo.src = "pic2.png"
+			alert('Fail! Try again!')
+			count++
+		} else {
+			alert('ВЫ уже открыли карту')
+		}
+	}
+}
+
+var naperstkiWorkTree = document.querySelector('.naperstki-three');
+
+naperstkiWorkTree.onclick = function() {
+	if (count >= 2) {
+		alert('GameOver!')
+	} else {
+		if (naperstkiWorkTree.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+			naperstkiWorkTree.src = "pic3.jpg"
+			alert('Great job! you win!')
+			win = true;
+			count++
+		} else {
+			alert('ВЫ уже открыли карту')
+		}
+	}
+}
+
+var naperstkiWorkFour = document.querySelector('.naperstki-four');
+
+naperstkiWorkFour.onclick = function() {
+	if (count >= 2) {
+		alert('GameOver!')
+	} else {
+		if (naperstkiWorkFour.src == "file:///Users/annapc/Downloads/learn/naperstki/pic1.png") {
+			naperstkiWorkFour.src = "pic2.png"
+			alert('Fail! Try again!')
+			count++
+		} else {
+			alert('ВЫ уже открыли карту')
+		}
+	}
+}
+
+
+</script>
+</body>
+</html>

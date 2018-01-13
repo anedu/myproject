@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Повтор</title>
+</head>
+<body>
+<script type="text/javascript">
+/* Тип данных
+- динамическое преобразование данных
+- Число
+- Строка
+- булевы
+- массив
+- объект
+- аргумент функции
+- 2 типа функций:
+	- обычная функция, которая возврашает undefined;
+	- конструктор, которая использует команду "return".
+- языки программирования используют оперативную память. Каждый раз при загрузке страницы данные отправляются заново.
+*/
+var computerModel = "Macbook";
+
+
+
+var musicPlay = true;
+
+var outpatientСard = [
+	"Иванов",
+	function (x, y) {
+		console.log(x + y)
+	},
+	[
+		"a", 
+		"b", 
+		"c"
+	],
+	"Петров", 
+	"Сидоров", 
+	"Марков", 
+	"Кузьмин", 
+	"Захаров"
+];
+
+var emptyArray = [];
+
+emptyArray [7] = "Данилов";
+
+var enemy = 80;
+
+var menu = {
+	"drink": "juise",
+	"dish": "potato",
+	"chislo": 1,
+	"key": {
+		"a": "b",
+		"c": "d",
+		"massiv": [
+			false,
+			23,
+			"rd",
+			function () {
+				var run = 1;
+				run++;
+				console.log(run)			}
+		],
+	}
+}
+
+//Пустой объект, который мы наполняем через короткую запись (синтаксический сахар).
+var stuff = {};
+stuff.letter = "Text";
+stuff.medicine = 10;
+//функция, которая возращает undefined. Потому что она просто совершает какое то действие. Вначале проверяет условие и в зависимости от выполнения условия презаписывает значение переменной enemy + выводит на экран строку и новое значение enemy.
+
+stuff.gun = function (bullet) {
+	if (bullet > enemy) {
+		enemy = 0;
+		console.log("Количество врагов: " + enemy);
+	} else {
+		enemy = enemy - bullet;
+		console.log("Количество врагов: " + enemy);
+	}
+}
+
+//Обращение к фукнции:
+stuff.gun(10);
+
+// В переменную сумма сохранено значение тип данных функция. функция, которая считает сумму 2-х значений и выводит ее в консоль. Возвращает Undefined.
+var summa = function (x, y) {
+	x + y
+	console.log(x + y);
+};
+
+//Обращение к фукнции:
+summa(5, 6);
+
+//Без return функция всегда возвращает андефайнед.
+
+//return - возвращает значение. результат выполнения функции является не андефайнед, а то что написано справа от return. Rerurn можно использовать с любым типом данным. Return никак не связан с кодом функции с которой используется.
+var littleObject = {};
+
+littleObject.dvaArgumenta = function(name, surname) {
+	return "Привет " + name + " " + surname;
+}
+
+var privetstvie = littleObject.dvaArgumenta("John", "Smith");
+console.log(privetstvie);
+
+var f = function(x, y) {
+	return x + y;
+}
+var summa = f(20, 3)
+console.log(summa);
+
+// 2 типа функций:
+
+//конструктор (фабрика, фактори) - это функция, которая что-то создает и возвращает (return) это. Используем конструктор, когда мы хотим присвоить какой то переменной какое то значение, чаще всего завищащее от каких либо условий.
+
+var makeDinner = function (indigentOne, indigentTwo, indigentThree) {
+	var dinner = {};
+
+	if (indigentOne == "картошка" && indigentTwo == "мясо" && indigentThree == "хлеб") {
+		dinner.name = "Мясо с картошкой";
+		dinner.type = "ужин";
+		dinner.weight = 250;
+		dinner.spoon = true;
+		dinner.eat = true;
+		dinner.person = 4;
+		dinner.whoeat = {
+			"personOne": "John",
+			"personTwo": "Jane",
+			"personThree": "Mary",
+			"personFour": "Jack"
+		}
+		dinner.chair = [
+			"chairOne",
+			"chairTwo",
+			"chairThree",
+			"chairFour" 
+		]
+
+	} else if (indigentOne == "тесто" && indigentTwo == "мясо" && indigentThree == "соль") {
+		dinner.name = "Пирожок";
+		dinner.type = "мучное";
+		dinner.weight = 150;
+		dinner.spoon = false;
+		dinner.eat = true;
+		dinner.person = 6;
+		dinner.whoeat = {
+			"personOne": "John",
+			"personTwo": "Jane",
+			"personThree": "Mary",
+			"personFour": "Jack",
+			"personFive": "Megan",
+			"personSix": "Tyler"
+		}
+		dinner.chair = [
+			"chairOne",
+			"chairTwo",
+			"chairThree",
+			"chairFour" 
+		]
+	}
+	return dinner;
+}
+
+var pirojok = makeDinner("тесто", "мясо", "соль");
+console.log(pirojok);
+
+var myaso = makeDinner("картошка", "мясо", "хлеб");
+console.log(myaso);
+
+</script>
+</body>
+</html>
