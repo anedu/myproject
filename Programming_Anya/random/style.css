@@ -1,0 +1,15 @@
+.block {
+	margin: 100px 200px 100px 200px;
+	padding: 50px 50px 50px 50px;
+	font-family: arial;
+	background: #EAC3F7;
+}
+
+.knopka {
+	height: 20px;
+	width: 100px;
+}
+
+.zagolovok {
+	color: #1A6E8A;
+}

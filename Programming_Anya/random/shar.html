@@ -3,17 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div class="block">
+	<h3 class="zagolovok">Сгенерировать случайное ругательство:</h3>
+	<button class="knopka">Ok</button>
+</div>
 
 <script type="text/javascript">
 /*
+связать это с кнопкой 
+
 Функция, которая рандомно выдает да или нет.
 Если (Math.random() > 0.5) {
 	то console.log("yes")
 } else { console.log("no")
 }
-
 
 генератор ругательств:
 
@@ -26,18 +32,16 @@
 
 каждый раз вызываем функцию, она возвращает случайное ругательство.
 
+Нашли кнопку на странице. есть 3 массива. Объявлена функция knopka.onclick
 
 */
+
+var knopka = document.querySelector(".knopka");
 
 var who = [
 	"вы",
 	"ты",
-	"они",
-	"dfsp",
-	"dffe",
-	"dfe",
-	"оs",
-	"wer"]
+	"они"]
 
 var adjective = [
 	"тупой",
@@ -49,19 +53,28 @@ var noun = [
 	"идиот",
 	"придурок"]
 
+knopka.onclick = function () {
+	alert(who [makeRandom(who.length)] + ' ' + 
+		adjective [makeRandom(adjective.length)] + ' ' + 
+		noun [makeRandom(noun.length)])
+	return who [makeRandom(who.length)] + ' ' + 
+		adjective [makeRandom(adjective.length)] + ' ' + 
+		noun [makeRandom(noun.length)]
+} 
+
+/*
 var rugatelstvo = function () {
 	return who [makeRandom(who.length)] + ' ' + 
 		adjective [makeRandom(adjective.length)] + ' ' + 
 		noun [makeRandom(noun.length)]
-	
 }
+
+var save = rugatelstvo();
+*/
 
 var makeRandom = function(predel) {
 	return Math.floor(Math.random() * predel)
 }
-
-
-var save = rugatelstvo();
 
 /*
 var randomYesOrNo = function () {
@@ -71,7 +84,6 @@ var randomYesOrNo = function () {
 		console.log("no")
 	}
 }
-
 randomYesOrNo();
 */
 </script>
