@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game: Найдите предметы</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="osnovnoi-blok">
+		<img src="pic1.jpg" class="background">
+
+		<div class="klik-one"></div>
+		<img src="pic2.png" class="show-one">
+
+		<div class="klik-two"></div>
+		<img src="pic3.png" class="show-two">
+
+
+		<img src="pic4.png" class="show-three">
+		<img src="pic5.png" class="show-four">
+		
+		<div class="klik-three"></div>
+		<img src="pic6.png" class="show-five">
+		<img src="pic7.png" class="show-six">
+
+		<div class="klik-four"></div>
+		<img src="pic8.png" class="show-seven">
+		<img src="pic9.png" class="show-eight">
+
+
+	</div>
+
+	
+
+<script type="text/javascript">
+/*
+квест.
+поиск предметов.
+до этого клика выходит алерт("шкаф закрыт")
+свойство дисплей, при клике на этот объект, один появляется другой скрывается.
+css-свойство: 
+position: absolute
+есть шкаф, при клике на него выходит другой
+
+
+АРХИТЕКТУРА
+
+переменные:
+див гитары
+имг гитары
+див картины
+имг картины
+имг молотка
+имг медиатора
+
+вначале так:
+див гитары = дисплей;
+гитара = нон;
+
+див картины = дисплей;
+картина = нон;
+
+молоток = дисплей;
+медиатор = нон;
+
+
+
+var clickGuitar = функция Кликаю на див гитары {
+	если (молоток = нон и медиатор = дислей) {
+		див гитары = нон
+		img гитары = flex	
+	} иначе {
+		alert("Найдите медиатор, чтобы сыграть на гитаре.")
+	}
+}
+
+var clickPicture = функция Кликаю на див картины {
+	если (молоток = нон и медиатор = дислей) {
+		див картины = нон
+		img картины = flex
+	} иначе {
+		alert("Кажется за ней что-то лежит. Нужно чем-то ее прибыть...")
+	}
+}
+
+var clickMolotok = функция Кликаю на img молоток {
+	дисплей молотка = none;
+	дисплей медиатора = flex;
+}
+
+после этого стало так:
+див гитары = дисплей;
+гитара = нон;
+
+див картины = дисплей;
+картина = нон;
+
+молоток = нон;
+медиатор = дисплей;
+
+кликаю по диву жунала {
+	if (очки == нон) {
+		див жунала = нон
+		имг журнала = флекс
+	} else {
+		alert("Ничего не видно... Найдите очки")
+	}
+}
+
+кликаю по имг очков {
+	имг очков = нон
+}
+
+кликаю по диву шлема для бейсбола {
+	if (мяч == нон) {
+		див шлема для бейсбола = нон
+		имг бейсболиста = флекс
+	} else {
+		alert("Собираемся на тренировку, но где же мяч?")
+	}
+}
+
+кликаю по имг мяча {
+	имг мяча = нон
+}
+
+значение в иф переменная, которая хранит тип данных bool. 
+true
+false
+
+переменная хранящая тип данных true
+var per = true;
+
+должно быть: 
+при загрузке страницы переменная не кликнута, она false. Когда мы кликаем по переменной, она становиться true.
+
+Условие должно быть такое:
+если пременная такая то, тру то {
+	выполяется код.
+
+у меня есть переменная булева = false. если я кликаю на молоток, то она становиться true. 
+
+если переменная = true;
+}
+*/
+
+var divGitara = document.querySelector(".klik-one");
+var imgGitara = document.querySelector(".show-one");
+var divKartina = document.querySelector(".klik-two");
+var imgKartina = document.querySelector(".show-two");
+var imgMolotok = document.querySelector(".show-three");
+var imgMediator = document.querySelector(".show-four");
+
+var divJurnali = document.querySelector(".klik-three");
+var imgOchki = document.querySelector(".show-five");
+var imgJurnali = document.querySelector(".show-six");
+
+var divFootball = document.querySelector(".klik-four");
+var imgMyach = document.querySelector(".show-seven");
+var imgFootball = document.querySelector(".show-eight");
+
+var visibleImgMolotok = true;
+
+var visibleImgOchki = true;
+
+var visibleImgMyach = true;
+
+/*
+при загрузке страницы:
+imgMolotok.style.display = ""
+mgMediator.style.display = ""
+
+imgMolotok.style.display == "flex" - true
+imgMediator.style.display == "none" - false
+
+потом должно стать:
+imgMolotok.style.display == "none" - false
+imgMediator.style.display == "flex" - true
+*/
+
+//Гитара, катрина, молоток, медиатор
+// visibleImgMolotok = true; !visibleImgMolotok == visibleImgMolotok = false
+divGitara.onclick = function () {
+	if (!visibleImgMolotok) {
+		divGitara.style.display = "none";
+		imgGitara.style.display = "flex";
+	} else {
+		alert("Поиграть бы на гитаре, но где медиатор?..")
+	}
+}
+
+divKartina.onclick = function () {
+	if (!visibleImgMolotok) {
+		divKartina.style.display = "none";
+		imgKartina.style.display = "flex";
+	} else {
+		alert("Кажется за картиной что-то лежит, да и картину бы сменить...")
+	}
+}
+
+imgMolotok.onclick = function () {
+	imgMolotok.style.display = "none";
+	imgMediator.style.display = "flex";
+	if (imgMolotok.style.display == "none" && imgMediator.style.display == "flex") {
+		visibleImgMolotok = false;
+	}
+}
+
+//Журналы и очки
+divJurnali.onclick = function () {
+	if (!visibleImgOchki) {
+		divJurnali.style.display == "none";
+		imgJurnali.style.display = "flex";
+	} else {
+		alert("Почитать бы, но ничего не видно... Где же очки...");
+	}
+}
+
+imgOchki.onclick = function () {
+	imgOchki.style.display = "none";
+	if (imgOchki.style.display = "none") {
+		visibleImgOchki = false
+	}
+}
+
+//Игра в американский футбол
+divFootball.onclick = function () {
+	if (!visibleImgMyach) {
+		divFootball.style.display == "none";
+		imgFootball.style.display = "flex";
+	} else {
+		alert("Собираемся на тренировку, но где же мяч?");
+	}
+}
+
+imgMyach.onclick = function () {
+	imgMyach.style.display = "none";
+	if (imgMyach.style.display == "none") {
+		visibleImgMyach = false
+	}
+}
+</script>
+</body>
+</html>

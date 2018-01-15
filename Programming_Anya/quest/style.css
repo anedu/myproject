@@ -1,0 +1,144 @@
+.osnovnoi-blok {
+	position: absolute;
+}
+
+.background {
+	width: 1400px;
+	display: flex;
+	position: absolute;
+}
+
+.klik-one {
+	display: flex;
+	width: 100px;
+	height: 200px;
+	color: yellow;
+	position: absolute;
+	top: 620px;
+	right: 0px;
+	bottom: 100px;
+	left: 0px;
+}
+
+.show-one {
+	display: none;
+	width: 300px;
+	position: absolute;
+	top: 510px;
+	right: 0px;
+	bottom: 100px;
+	left: 0px;
+}
+
+.klik-two {
+	display: flex;
+	width: 100px;
+	height: 120px;
+	color: yellow;
+	position: absolute;
+	top: 180px;
+	right: 0px;
+	bottom: 0px;
+	left: 600px;
+}
+
+.show-two {
+	display: none;
+	width: 110px;
+	height: 130px;
+	position: absolute;
+	top: 170px;
+	right: 0px;
+	bottom: 0px;
+	left: 590px;
+}
+
+.show-three {
+	display: flex;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 830px;
+	right: 0px;
+	bottom: 0px;
+	left: 850px;
+}
+
+.show-four {
+	display: none;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 850px;
+	right: 0px;
+	bottom: 0px;
+	left: 820px;
+}
+
+.klik-three {
+	display: flex;
+	width: 100px;
+	height: 100px;
+	color: yellow;
+	position: absolute;
+	top: 700px;
+	right: 0px;
+	bottom: 100px;
+	left: 800px;
+}
+
+.show-five {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 460px;
+	right: 0px;
+	bottom: 0px;
+	left: 960px;
+}
+
+.show-six {
+	display: none;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: 650px;
+	right: 0px;
+	bottom: 100px;
+	left: 780px;
+}
+
+.klik-four {
+	display: flex;
+	width: 150px;
+	height: 150px;
+	color: yellow;
+	position: absolute;
+	top: 100px;
+	right: 0px;
+	bottom: 100px;
+	left: 1200px;
+}
+
+.show-seven {
+	display: flex;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 420px;
+	right: 0px;
+	bottom: 0px;
+	left: 250px;
+}
+
+.show-eight {
+	display: none;
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 100px;
+	right: 0px;
+	bottom: 100px;
+	left: 1200px;
+}
