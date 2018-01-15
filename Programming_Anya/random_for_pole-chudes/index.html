@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="block">
+	<h3 class="zagolovok">Сгенерировать случайное ругательство:</h3>
+	<button class="knopka">Ok</button>
+</div>
+
+<script type="text/javascript">
+/*
+связать это с кнопкой 
+
+Функция, которая рандомно выдает да или нет.
+Если (Math.random() > 0.5) {
+	то console.log("yes")
+} else { console.log("no")
+}
+
+генератор ругательств:
+
+состоит из 3 частей:
+- обращение кто: "они", "вы", "ты"
+- прилагательное: "тупой", "дурацкий",
+- существительное: "балбес", "идиот",
+
+функция возвращает готовое ругательство.
+
+каждый раз вызываем функцию, она возвращает случайное ругательство.
+
+Нашли кнопку на странице. есть 3 массива. Объявлена функция knopka.onclick, которая обращается рандомно к индексам массивов. Она вызывается при клике на кнопку. 
+
+*/
+
+var knopka = document.querySelector(".knopka");
+
+var who = [
+	"вы",
+	"ты",
+	"они"]
+
+var adjective = [
+	"тупой",
+	"дурацкий",
+	"глупый"]
+
+var noun = [
+	"балбес",
+	"идиот",
+	"придурок"]
+
+knopka.onclick = function () {
+	alert(who [makeRandom(who.length)] + ' ' + 
+		adjective [makeRandom(adjective.length)] + ' ' + 
+		noun [makeRandom(noun.length)])
+	return who [makeRandom(who.length)] + ' ' + 
+		adjective [makeRandom(adjective.length)] + ' ' + 
+		noun [makeRandom(noun.length)]
+} 
+
+/*
+var rugatelstvo = function () {
+	return who [makeRandom(who.length)] + ' ' + 
+		adjective [makeRandom(adjective.length)] + ' ' + 
+		noun [makeRandom(noun.length)]
+}
+
+var save = rugatelstvo();
+*/
+
+var makeRandom = function(predel) {
+	return Math.floor(Math.random() * predel)
+}
+
+/*
+var randomYesOrNo = function () {
+	if (Math.random() > 0.5) {
+		console.log("yes")
+	} else {
+		console.log("no")
+	}
+}
+randomYesOrNo();
+*/
+</script>
+</body>
+</html>
