@@ -2,90 +2,156 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Поле чудес</title>
+	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="block">
-	<h3 class="zagolovok">Сгенерировать случайное ругательство:</h3>
-	<button class="knopka">Ok</button>
-</div>
-
+	<div class="block">
+		<div class="close-one"></div><h1 class="letter-one">в</h1>
+		<div class="close-two"></div><h1 class="letter-two">о</h1>
+		<div class="close-three"></div><h1 class="letter-three">д</h1>
+		<div class="close-four"></div><h1 class="letter-four">а</h1>
+	</div>
 <script type="text/javascript">
-/*
-связать это с кнопкой 
 
-Функция, которая рандомно выдает да или нет.
-Если (Math.random() > 0.5) {
-	то console.log("yes")
-} else { console.log("no")
-}
-
-генератор ругательств:
-
-состоит из 3 частей:
-- обращение кто: "они", "вы", "ты"
-- прилагательное: "тупой", "дурацкий",
-- существительное: "балбес", "идиот",
-
-функция возвращает готовое ругательство.
-
-каждый раз вызываем функцию, она возвращает случайное ругательство.
-
-Нашли кнопку на странице. есть 3 массива. Объявлена функция knopka.onclick, которая обращается рандомно к индексам массивов. Она вызывается при клике на кнопку. 
-
-*/
-
-var knopka = document.querySelector(".knopka");
-
-var who = [
-	"вы",
-	"ты",
-	"они"]
-
-var adjective = [
-	"тупой",
-	"дурацкий",
-	"глупый"]
-
-var noun = [
-	"балбес",
-	"идиот",
-	"придурок"]
-
-knopka.onclick = function () {
-	alert(who [makeRandom(who.length)] + ' ' + 
-		adjective [makeRandom(adjective.length)] + ' ' + 
-		noun [makeRandom(noun.length)])
-	return who [makeRandom(who.length)] + ' ' + 
-		adjective [makeRandom(adjective.length)] + ' ' + 
-		noun [makeRandom(noun.length)]
-} 
-
-/*
-var rugatelstvo = function () {
-	return who [makeRandom(who.length)] + ' ' + 
-		adjective [makeRandom(adjective.length)] + ' ' + 
-		noun [makeRandom(noun.length)]
-}
-
-var save = rugatelstvo();
-*/
+var voprosi = ["Из чего состоит человек?",
+"Роман Достоевского?"];
 
 var makeRandom = function(predel) {
 	return Math.floor(Math.random() * predel)
 }
 
-/*
-var randomYesOrNo = function () {
-	if (Math.random() > 0.5) {
-		console.log("yes")
-	} else {
-		console.log("no")
+var randomVopros = function () {
+	return voprosi [makeRandom(voprosi.length)]
+}
+
+var youWin = [];
+var count = 0;
+
+var kvadratOne = document.querySelector('.close-one');
+var bukvaOne = document.querySelector('.letter-one');
+
+var youFail = function(div, h1) {
+	alert("Вы проиграли. Езжайте домой в Рязань :)");		
+}
+
+var check = function() {
+	if (youWin [0] == "в" && youWin [1] == "о" && youWin [2] == "д" && youWin [3] == "а") {
+		alert("Поздравляем! Ааавввтомобиииль Ваааш!");
 	}
 }
-randomYesOrNo();
+kvadratOne.onclick = function () {
+	if (randomVopros() == voprosi [0]) {
+		if (count <= -30) {
+			youFail("kvadratOne.style.display", "bukvaOne.style.display");	
+		} else {
+			var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+			if (answer == "в") {
+				kvadratOne.style.display = "none";
+				bukvaOne.style.display = "flex";
+				count = count + 10;
+			} else {
+				alert("Ответ неправильный. Попробуйте снова");
+				count = count - 10;
+				if (count <= -30) {
+					youFail("kvadratOne.style.display", "bukvaOne.style.display");
+				}
+			}
+		}
+		youWin [0] = answer;
+		check();
+	}
+}
+
+
+/*kvadratOne.onclick = function () {
+	if (count <= -30) {
+		youFail("kvadratOne.style.display", "bukvaOne.style.display");	
+	} else {
+		var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+		if (answer == "в") {
+			kvadratOne.style.display = "none";
+			bukvaOne.style.display = "flex";
+			count = count + 10;
+		} else {
+			alert("Ответ неправильный. Попробуйте снова");
+			count = count - 10;
+			if (count <= -30) {
+				youFail("kvadratOne.style.display", "bukvaOne.style.display");
+			}
+		}
+	}
+	youWin [0] = answer;
+	check();
+}
 */
+
+var kvadratTwo = document.querySelector('.close-two');
+var bukvaTwo = document.querySelector('.letter-two');
+kvadratTwo.onclick = function () {
+	if (count <= -30) {
+		youFail("kvadratTwo.style.display", "bukvaTwo.style.display");		
+	} else {
+		var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+		if (answer == "о") {
+			kvadratTwo.style.display = "none";
+			bukvaTwo.style.display = "flex";
+			count = count + 10;
+		} else {
+			alert("Ответ неправильный. Попробуйте снова");
+			count = count - 10;
+			if (count <= -30) {
+				youFail("kvadratTwo.style.display", "bukvaTwo.style.display");
+			}
+		}
+	}
+	youWin [1] = answer;
+	check();
+}
+var kvadratThree = document.querySelector('.close-three');
+var bukvaThree = document.querySelector('.letter-three');
+kvadratThree.onclick = function () {
+	if (count <= -30) {
+		youFail("kvadratThree.style.display", "bukvaThree.style.display")	
+	} else {
+		var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+		if (answer == "д") {
+			kvadratThree.style.display = "none";
+			bukvaThree.style.display = "flex";
+			count = count + 10;
+		} else {
+			alert("Ответ неправильный. Попробуйте снова");
+			count = count - 10;
+			if (count <= -30) {
+				youFail("kvadratThree.style.display", "bukvaThree.style.display")	
+			}
+		}
+	}
+	youWin [2] = answer;
+	check();
+}
+var kvadratFour = document.querySelector('.close-four');
+var bukvaFour = document.querySelector('.letter-four');
+kvadratFour.onclick = function () {
+	if (count <= -30) {
+		youFail("kvadratFour.style.display", "bukvaFour.style.display")		
+	} else {
+		var answer = prompt("Из чего состоит человек на 80%? Введите букву: ");
+		if (answer == "а") {
+			kvadratFour.style.display = "none";
+			bukvaFour.style.display = "flex";
+			count = count + 10;
+		} else {
+			alert("Ответ неправильный. Попробуйте снова");
+			count = count - 10;
+			if (count <= -30) {
+				youFail("kvadratFour.style.display", "bukvaFour.style.display")	
+			}
+		}
+	}
+	youWin [3] = answer;
+	check();
+}
 </script>
 </body>
 </html>

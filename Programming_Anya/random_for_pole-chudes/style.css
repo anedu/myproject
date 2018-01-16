@@ -1,0 +1,28 @@
+body {
+	display: flex;
+}
+
+.block {
+	display: flex;
+}
+
+.letter-one,
+.letter-two,
+.letter-three,
+.letter-four {
+	margin: 0;
+	display: none;
+}
+
+.close-one,
+.close-two,
+.close-three,
+.close-four {
+	height: 40px;
+	width: 40px;
+	background: black;
+	display: flex;
+	margin-left: 3px;
+	margin-right: 3px;
+	border: 4px double #F5B6A2;
+}
