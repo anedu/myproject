@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Расчет аннуитетных платежей</title>
+</head>
+<div>
+	<h1>Добро пожаловать! Расчитайте сумму ежемесячных аннуитетных платежей по ипотеке.</h1>		
+	<p>Введите сумму кредита:</p>
+	<input placeholder="Сумма кредита" class=".credit" />
+	<p>Введите %-ную ставку:</p>
+	<input placeholder="%-ая ставка" class=".percent" />
+	<p>Введите срок кредита (кол-во лет):</p>
+	<input placeholder="Срок кредита (лет)" />
+	<button>Рассчитать</button>
+</div>
+
+
+<body>
+	<script type="text/javascript">
+/* 
+1. Находим площадь прямоугольника длиной 23см., шириной 10см.
+a = 23;
+b = 10;
+S = a * b;
+S = 230;
+*/
+
+//функция, которая принимает аргументы длины и ширины прямоугольника и считает площадь, возвращает его значение.
+
+var s = function (a, b) {
+	return a * b;
+}
+console.log("S прям. 23 на 10 = " + s(23, 10));
+
+/*2. Напиши скрипт, который находит объем цилиндра высотой 10м и диаметром основания 4м
+h = 10;
+d = 4;
+r = 4 / 2 = 2;
+V = pi * r * r * h;
+V = 3,1415 * 4 * 10;
+*/
+
+var showV = function (r, h) {
+	var pi = 3.1415;
+	return pi * r * r * h;
+}
+console.log("V цилиндра выс. 10 и радиусом осн. = " + showV(2, 10));
+
+/*3. У прямоугольного треугольника две стороны n и m. Найдите гипотенузу по теореме Пифагора (нужно использовать функцию Math.pow(число, степень)).
+
+Math.pow(x, exp)
+Возводит число в степень, возвращает x-exp, например Math.pow(2,3) = 8. Работает в том числе с дробными и отрицательными степенями, например: Math.pow(4, -1/2) = 0.5.
+*/
+//фукнция подсчета гипотенузы:
+var findHypotenuse = function (n, m) {
+	var squareHypotenuse = Math.pow(n, 2) + Math.pow(m, 2);
+	return Math.sqrt(squareHypotenuse);
+}
+
+console.log("Гипотенуза = " + findHypotenuse(6, 8) + " если катеты равны 6 и 8.");
+
+/*4. Найди двенадцатый элемент последовательности Леонардо Пизанского (нужно использовать функцию Math.pow(число, степень))
+*/
+var fZero = 0;
+var fOne = 1;
+var numberFibonacci = function (n) {
+	var fibonacci = ((1 + Math.sqrt(5))) / Math.sqrt(5);
+}
+
+//5. Найди двенадцатый элемент последовательности Леонардо Пизанского (нужно использовать функцию Math.pow(число, степень))
+
+var fibonacciNumber = function (x, y) {
+	for (i = 0; i <= 144; i = (x + y) + y) {
+		console.log(i);
+	}
+}
+
+//6.  Даны размер ипотечного кредита, процентная ставка, кол-во лет. Найти переплату по кредиту.
+
+var ipoteka = function(summa, prosent, time) {
+	var i = prosent / 100 / 12;
+	var n = time * 12;
+	var stepen = Math.pow(1 + i, n);
+	var p = summa * (i + i / (stepen - 1));
+	var summaViplat = p * n;
+	var pereplata = summaViplat - summa;
+	return pereplata;
+}
+</script>
+</body>
+</html>
