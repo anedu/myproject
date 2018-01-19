@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Расчет аннуитентных платежей</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<div class="block">
+	<h1>Добро пожаловать! Расчитайте сумму ежемесячных аннуитетных платежей по ипотеке.</h1>		
+	<p>Введите сумму кредита:</p>
+	<input placeholder="Сумма кредита" class="summa" />
+
+	<p>Введите %-ную ставку:</p>
+	<input placeholder="%-ая ставка" class="prosent" />
+
+	<p>Введите срок кредита (кол-во лет):</p>
+	<input placeholder="Срок кредита (лет)" class="age" />
+
+	<button class="knopka">Рассчитать</button>
+</div>
+
+<body>
+<script type="text/javascript">
+
+var summa = document.querySelector('.summa');
+var prosent = document.querySelector('.prosent');
+var age = document.querySelector('.age');
+var knopka = document.querySelector('.knopka');
+
+var summaViplat;
+var pereplata;
+
+knopka.onclick = function () {
+	var i = prosent.value / 100 / 12;
+	var n = age.value * 12;
+	var stepen = Math.pow(1 + i, n);
+	var p = summa.value * (i + i / (stepen - 1));
+
+	summaViplat = p * n;
+	pereplata = summaViplat - summa.value;
+
+	alert("Ежемесячный платеж: " + Math.floor(p) + " руб. Общая сумма выплат " + Math.floor(summaViplat) + " руб. Сумма переплаты: " + Math.floor(pereplata) + " руб.");
+}
+</script>
+</body>
+</html>
