@@ -99,16 +99,43 @@ VM23611:1 Uncaught SyntaxError: Unexpected identifier
 <script>
 	var findBody = document.querySelector("body");
 
-	findBody.innerHTML = findBody.innerHTML + date;
+	findBody.innerHTML = findBody.innerHTML + "12345";
+	
 	var date = [];
 
 	var addDate = function() {
 		for (i = 1; i < 32; i++) {
-			date = date + i;
-			findBody.innerHTML = date;
+			date [i] = i;
 			return date;
 		}
 	}
+/*
+цикл внутри цикла, вначале запускается цикл, который строит документ по строкам, потом по дням.
+*/
+
+var makeCalendar = function () {
+	for (i = 0; i < 5; i++) {
+		findBody.innerHTML = "<td>1</td>" + "<td>2</td>";
+		findBody.innerHTML++;
+	}
+}
+
+
+
+/*
+Внутренний цикл:
+		for (j = 0; j < 7; j++) {
+			findBody.innerHTML = "<tr>f</tr><tr>q</tr><tr>e</tr><tr>e</tr><tr>w</tr>";
+		}
+
+
+for (i = 0; i < 10; i++) {
+	console.log(i);
+	for (j = -5; j < 0; j++) {
+		console.log(j);
+	}
+}
+*/
 </script>
 </body>
 </html>
