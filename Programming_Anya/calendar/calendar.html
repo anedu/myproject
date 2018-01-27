@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Календарь</title>
+</head>
+
+<body>
+
+<h1>Календарь</h1>
+<table>
+	<th>пн</th>
+	<th>вт</th>
+	<th>ср</th>
+	<th>чт</th>
+	<th>пт</th>
+	<th>сб</th>
+	<th>вс</th>
+
+	<tr>
+		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+	</tr>
+
+	<tr>
+		<td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+	</tr>
+
+	<tr>
+		<td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+	</tr>
+
+	<tr>
+		<td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+	</tr>
+
+	<tr>
+		<td>29</td><td>30</td><td>31</td>
+	</tr>	
+</table>
+<script>
+	var findBody = document.querySelector("body");
+
+	findBody.innerHTML = findBody.innerHTML + "<img src = 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg'/>"
+
+	var addDate = function() {
+		for (i = 1; i < 32; i++) {
+			console.log(i);
+		}
+	}
+</script>
+</body>
+</html>
