@@ -22,23 +22,18 @@ findBody.innerHTML
 	<th>пт</th>
 	<th>сб</th>
 	<th>вс</th>
-
 	</tr><tr>
 		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
 	</tr>
-
 	<tr>
 		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
 	</tr>
-
 	<tr>
 		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
 	</tr>
-
 	<tr>
 		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
 	</tr>
-
 	<tr>
 		<td>1</td><td>2</td><td>3</td>
 	</tr>	
@@ -46,7 +41,6 @@ findBody.innerHTML
 <script>
 	
 </script>
-
 "
 findBody.innerHTML = "dfefo";
 "dfefo"
@@ -96,41 +90,39 @@ VM23611:1 Uncaught SyntaxError: Unexpected identifier
 		<td>29</td><td>30</td><td>31</td>
 	</tr>	
 </table>
+
 <script>
-	var findBody = document.querySelector("body");
 
-	findBody.innerHTML = findBody.innerHTML + "12345";
-	
-	var date = [];
-
-	var addDate = function() {
-		for (i = 1; i < 32; i++) {
-			date [i] = i;
-			return date;
-		}
-	}
 /*
-цикл внутри цикла, вначале запускается цикл, который строит документ по строкам, потом по дням.
+	var findBody = document.querySelector("body");
+	findBody.innerHTML = findBody.innerHTML + "	<table> <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td> <td>5</td> <td>6</td> <td>7</td> </tr>";
+	findBody.innerHTML = findBody.innerHTML + "	<tr> <td>8</td> <td>9</td> <td>10</td> <td>11</td> <td>12</td> <td>13</td> <td>14</td> </tr>";
+	findBody.innerHTML = findBody.innerHTML + "	<tr> <td>15</td> <td>16</td> <td>17</td> <td>18</td> <td>19</td> <td>20</td> <td>21</td> </tr>";
+	findBody.innerHTML = findBody.innerHTML + "	<tr> <td>22</td> <td>23</td> <td>24</td> <td>25</td> <td>26</td> <td>27</td> <td>28</td> </tr>";
+	findBody.innerHTML = findBody.innerHTML + "	<tr> <td>29</td> <td>30</td> <td>31</td> </tr> </table>";
 */
 
+	
+/*
+цикл внутри цикла, вначале запускается цикл, который строит документ по строкам, потом по ячейкам.
+*/
+
+var findBody = document.querySelector("body");
+
 var makeCalendar = function () {
-	for (i = 0; i < 5; i++) {
-		findBody.innerHTML = "<td>1</td>" + "<td>2</td>";
+	for (i = 0; i < 4; i++) {
+		findBody.innerHTML = findBody.innerHTML + "<tr>" + "</tr>" + "<br>";
+		for (j = 1; j < 8; j++) {
+			findBody.innerHTML = findBody.innerHTML + "<td>" + j + "</td>";
+		}
 	}
 }
 
-
-
 /*
-Внутренний цикл:
-		for (j = 0; j < 7; j++) {
-			findBody.innerHTML = "<tr>f</tr><tr>q</tr><tr>e</tr><tr>e</tr><tr>w</tr>";
-		}
-
 пример вложенного цикла:
-for (i = 0; i < 10; i++) {
+for (i = 0; i < 5; i++) {
 	console.log(i);
-	for (j = -5; j < 0; j++) {
+	for (j = -7; j < 0; j++) {
 		console.log(j);
 	}
 }
