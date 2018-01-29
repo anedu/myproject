@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Календарь</title>
+</head>
+<!--
+var findBody = document.querySelector("body");
+undefined
+findBody
+<body>​<h1>​Календарь​</h1>​<table>​…​</table>​<script>​
+	
+​</script>​</body>​
+findBody.innerHTML
+"
+<h1>Календарь</h1>
+<table>
+	<tbody><tr><th>пн</th>
+	<th>вт</th>
+	<th>ср</th>
+	<th>чт</th>
+	<th>пт</th>
+	<th>сб</th>
+	<th>вс</th>
+	</tr><tr>
+		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+	</tr>
+	<tr>
+		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+	</tr>
+	<tr>
+		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+	</tr>
+	<tr>
+		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+	</tr>
+	<tr>
+		<td>1</td><td>2</td><td>3</td>
+	</tr>	
+</tbody></table>
+<script>
+	
+</script>
+"
+findBody.innerHTML = "dfefo";
+"dfefo"
+findBody.innerHTML = "<img src = 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg'/>"
+"<img src = 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg'/>"
+findBody.innerHTML = findBody.innerHTML + "<img src = 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg'/>"
+"<img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg"><img src = 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg'/>"
+findBody.innerHTML = findBody.innerHTML + "<img src = 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg'/>"
+"<img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg"><img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg"><img src = 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg'/>"
+	for (i = 1; i < 31 i++) {
+		alert(i);
+	}
+VM23611:1 Uncaught SyntaxError: Unexpected identifier
+	for (i = 1; i < 31; i++) {
+		console.log(i);
+	}
+-->
+<body>
+
+<h1>Календарь</h1>
+<table>
+	<th>пн</th>
+	<th>вт</th>
+	<th>ср</th>
+	<th>чт</th>
+	<th>пт</th>
+	<th>сб</th>
+	<th>вс</th>
+
+	<tr>
+		<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+	</tr>
+
+	<tr>
+		<td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+	</tr>
+
+	<tr>
+		<td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+	</tr>
+
+	<tr>
+		<td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+	</tr>
+
+	<tr>
+		<td>29</td><td>30</td><td>31</td>
+	</tr>	
+</table>
+
+<script>
+
+/*
+	var findBody = document.querySelector("body");
+	findBody.innerHTML = findBody.innerHTML + "	<table> <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td> <td>5</td> <td>6</td> <td>7</td> </tr>";
+	findBody.innerHTML = findBody.innerHTML + "	<tr> <td>8</td> <td>9</td> <td>10</td> <td>11</td> <td>12</td> <td>13</td> <td>14</td> </tr>";
+	findBody.innerHTML = findBody.innerHTML + "	<tr> <td>15</td> <td>16</td> <td>17</td> <td>18</td> <td>19</td> <td>20</td> <td>21</td> </tr>";
+	findBody.innerHTML = findBody.innerHTML + "	<tr> <td>22</td> <td>23</td> <td>24</td> <td>25</td> <td>26</td> <td>27</td> <td>28</td> </tr>";
+	findBody.innerHTML = findBody.innerHTML + "	<tr> <td>29</td> <td>30</td> <td>31</td> </tr> </table>";
+*/
+
+	
+/*
+цикл внутри цикла, вначале запускается цикл, который строит документ по строкам, потом по ячейкам.
+*/
+
+var findBody = document.querySelector("body");
+
+var makeCalendar = function () {
+	for (i = 0; i < 4; i++) {
+		findBody.innerHTML = findBody.innerHTML + "<tr>" + "</tr>" + "<br>";
+		for (j = 1; j < 8; j++) {
+			findBody.innerHTML = findBody.innerHTML + "<td>" + j + "</td>";
+		}
+	}
+}
+
+/*
+пример вложенного цикла:
+for (i = 0; i < 5; i++) {
+	console.log(i);
+	for (j = -7; j < 0; j++) {
+		console.log(j);
+	}
+}
+*/
+</script>
+</body>
+</html>

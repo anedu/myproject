@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Циклы</title>
+</head>
+
+<body>
+<script type="text/javascript">
+//8. Напишите скрипт, который используя оператор while выведет все числа от 45 до 67. Начало -> условие -> тело -> шаг.
+
+var showNumber = function(n) {
+	while (n < 68) {
+		console.log(n++);
+	}
+}
+
+//9. Напишите скрипт, который используя оператор while выведет все числа от 45 до 670, кратные 10.
+
+var numberSorokPyatWhile = function() {
+	var n = 45;
+	while (n < 671) {
+		n++;
+		if (n % 10 == 0) {
+			console.log(n);			
+		}
+	}
+}
+
+//10. Напишите скрипт, который используя оператор for выполнит два предыдущих задания.
+
+var numberForSorokPyat = function (n) {
+	for (n; n < 68; n++) {
+		console.log(n);
+	}
+}
+
+var numberForShestsot = function(n) {
+	for (n; n < 671; n++) {
+		if (n % 10 == 0) {
+			console.log(n);
+		}
+	}
+}
+</script>
+</body>
+</html>

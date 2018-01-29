@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Расчет аннуитетных платежей</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+/* 
+1. Находим площадь прямоугольника длиной 23см., шириной 10см.
+a = 23;
+b = 10;
+S = a * b;
+S = 230;
+*/
+//функция, которая принимает аргументы длины и ширины прямоугольника и считает площадь, возвращает его значение.
+var s = function (a, b) {
+	return a * b;
+}
+console.log("S прям. 23 на 10 = " + s(23, 10));
+
+/*2. Напиши скрипт, который находит объем цилиндра высотой 10м и диаметром основания 4м
+h = 10;
+d = 4;
+r = 4 / 2 = 2;
+V = pi * r * r * h;
+V = 3,1415 * 4 * 10;
+*/
+var showV = function (r, h) {
+	var pi = 3.1415;
+	return pi * r * r * h;
+}
+console.log("V цилиндра выс. 10 и радиусом осн. = " + showV(2, 10));
+
+/*3. У прямоугольного треугольника две стороны n и m. Найдите гипотенузу по теореме Пифагора (нужно использовать функцию Math.pow(число, степень)).
+Math.pow(x, exp)
+Возводит число в степень, возвращает x-exp, например Math.pow(2,3) = 8. Работает в том числе с дробными и отрицательными степенями, например: Math.pow(4, -1/2) = 0.5.
+*/
+//фукнция подсчета гипотенузы:
+var findHypotenuse = function (n, m) {
+	var squareHypotenuse = Math.pow(n, 2) + Math.pow(m, 2);
+	return Math.sqrt(squareHypotenuse);
+}
+console.log("Гипотенуза = " + findHypotenuse(6, 8) + " если катеты равны 6 и 8.");
+
+/*4. Найди двенадцатый элемент последовательности Леонардо Пизанского (нужно использовать функцию Math.pow(число, степень))
+*/
+var fZero = 0;
+var fOne = 1;
+var numberFibonacci = function (n) {
+	var zolSech = 1.6180339887498948482;
+	var zolSechOne = 1 - zolSech;
+	var fibonacci = (Math.pow(zolSech, n) - Math.pow(zolSechOne, n)) / Math.sqrt(n);
+	return fibonacci;
+}
+
+//5. Найди двенадцатый элемент последовательности Леонардо Пизанского (нужно использовать функцию Math.pow(число, степень))
+
+
+
+//7. Создайте переменные m и n. В m поместите произвольное числовое значение. Напишите оператор ветвления if так, чтобы если m было больше 50, то в переменную n помещалось слово «большое», иначе — слово «маленькое».
+
+var m = 45;
+var n;
+
+var bolMen = function () {
+	if (m > 50) {
+		n = "Большое";
+	} else {
+		n = "Маленькое";	
+	}
+}
+
+
+//11. Переменная n хранит целое число от 0 до 9. Используя оператор switch, написать скрипт, который в зависимости от числа будет выводить слово (Например, если n равно 3, то будет выводиться слово «три»)
+
+var findNumber = function(n) {
+	switch(n) {
+		case 0: 
+			console.log("ноль");
+			break;
+
+		case 1:
+			console.log("один");
+			break;
+
+		case 2:
+			console.log("два");
+			break;
+
+		case 3:
+			console.log("три");
+			break;
+
+		case 4:
+			console.log("четыре");
+			break;
+
+		case 5:
+			console.log("пять");
+			break;
+
+		case 6:
+			console.log("шесть");
+			break;
+
+		case 7:
+			console.log("семь");
+			break;
+
+		case 8:
+			console.log("восемь");
+			break;
+
+		case 9:
+			console.log("девять");
+			break;
+
+		default:
+			console.log("Нет такого числа");
+			break;
+	}
+}
+</script>
+</body>
+</html>
