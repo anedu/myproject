@@ -1,0 +1,31 @@
+body {
+	background-image: url(pic4.png);
+}
+
+.block {
+	margin: 200px 150px 200px 150px;
+	position: absolute;
+}
+
+.picOne,
+.picTwo,
+.picThree {
+	height: 300px;
+}
+
+.buttonLeft {
+	display: flex;
+	margin: 10px;
+	bottom: 80px;
+}
+
+.buttonRight {
+	display: flex;
+	margin: 10px;
+	bottom: 100px;
+}
+
+.blockImages {
+	position: absolute;
+	overflow: hidden;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Вход</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<b>Логин:</b>
+<input class="login" placeholder="Логин">
+
+<b>Пароль:</b>
+<input class="parol" type="password" placeholder="Пароль">
+
+<button class="knopka">Войти</button>
+
+<script type="text/javascript">
+
+var login = document.querySelector(".login");
+var parol = document.querySelector(".parol");
+var knopka = document.querySelector(".knopka");
+
+knopka.onclick = function() {
+	if (login.value == "admin") {
+		if (parol.value == "password") {
+			alert("Добро Пожаловать!");
+		} else if (parol.value == "") {
+			alert("Введите пароль");
+		} else {
+			alert("Пароль не правильный")
+		}
+	} else if (login.value == "") {
+		alert("Введите Логин");
+	} else {
+		alert("Логин не правильный");
+	}
+}
+
+</script>
+</body>
+</html>
