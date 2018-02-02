@@ -17,35 +17,49 @@ css-свойство:
 -->
 
 <div class="block">
-	<div class="buttonLeft">
-		<button>влево</button>
-	</div>
-
-	<div class="buttonRight">
-		<button>вправо</button>
+	<button class="buttonRight">вправо</button><button class="buttonLeft">влево</button>
+	<div class="blockImages">
+			<img class="picOne" src="pic1.jpg" alt="sky">
+			<img class="picTwo" src="pic2.jpg" alt="sky1">
 	</div>
 	
-	<div class="blockImages">
-		<img class="picOne" src="pic1.jpg" alt="sky">
-		<img class="picTwo" src="pic2.jpg" alt="sky1">
-		<img class="picThree" src="pic3.jpg" alt="sky2">
-	</div>
 </div>
 
 <script type="text/javascript">
-	var divImages = document.querySelector(".blockImages");
 
-	var buttonLeft = document.querySelector(".buttonLeft");
+var knopkaRight = document.querySelector(".buttonRight");
+var knopkaLeft = document.querySelector(".buttonLeft");
 
-	buttonLeft.onclick = function() {
-		divImages.style.left = "-100px";
+var kartinkaOne = document.querySelector(".picOne");
+var kartinkaTwo = document.querySelector(".picTwo");
+
+knopkaRight.onclick = function () {
+	if (kartinkaOne.style.display == "flex") {
+		kartinkaTwo.style.display = "flex";
+		kartinkaOne.style.display = "none";
+	} else {
+		kartinkaOne.style.display = "flex";
+		kartinkaTwo.style.display = "none";
 	}
 
-	var buttonRight = document.querySelector(".buttonRight");
+}
 
-	buttonRight.onclick = function() {
-		divImages.style.left = "200px";
+knopkaLeft.onclick = function () {
+	if (kartinkaOne.style.display == "flex") {
+		kartinkaTwo.style.display = "flex";
+		kartinkaOne.style.display = "none";
+	} else {
+		kartinkaOne.style.display = "flex";
+		kartinkaTwo.style.display = "none";
 	}
+
+}
+
+
+/*knopkaLeft.onclick = function () {
+	kartinkaTwo.style.display = 'none';
+
+}*/
 
 </script>
 </body>

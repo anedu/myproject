@@ -4,13 +4,31 @@ body {
 
 .block {
 	margin: 200px 150px 200px 150px;
+	overflow: hidden;
+}
+
+.picOne {
+	height: 300px;
+	display: flex;
+	overflow: hidden;
 	position: absolute;
 }
 
-.picOne,
-.picTwo,
+
+
+.picTwo {
+	height: 300px;
+	display: none;
+	overflow: hidden;
+	position: absolute;
+}
+
+
 .picThree {
 	height: 300px;
+	display: flex;
+	overflow: hidden;
+	position: absolute;
 }
 
 .buttonLeft {
@@ -28,4 +46,7 @@ body {
 .blockImages {
 	position: absolute;
 	overflow: hidden;
+	height: 1000px;
+	width: 1000px;
+	position: absolute;
 }
