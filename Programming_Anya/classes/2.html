@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2</title>
+</head>
+<body>
+<script type="text/javascript">
+	//старый стандарт
+	function Player(name, hp) {
+		this.name = name;
+		this.hp = hp;
+		this.run = 0;
+		this.age = 0;
+		this.live = true;
+
+		this.runinng = function(step) {
+			this.run += step;
+			alert(this.name + ': прошел ' + this.run + " шагов");
+		}
+
+		this.yearsOld = function(years) {
+			this.age += years;
+			alert(this.name + ': ' + this.age + " лет");
+		} 
+	}
+
+	var hero = new Player ("Герой", 100);
+	hero.runinng(10);
+	hero.yearsOld(18);
+	console.log(hero);
+
+	var enemy = new Player("Зомби", 75);
+	enemy.runinng(6);
+	enemy.yearsOld(35);
+	console.log(enemy);
+
+	var friend = new Player("Друг", 70);
+	friend.runinng(5);
+	friend.yearsOld(45);
+	console.log(friend);
+</script>
+</body>
+</html>

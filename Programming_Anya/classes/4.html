@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1</title>
+</head>
+<body>
+<script type="text/javascript">
+	var human = function(name, hp) {
+		//var this = {};
+		this.name = name;
+		this.hp = hp;
+
+		//return this;
+	}
+
+/*
+у каждого объекта (элемента) класса есть скрытое свойство (переменная) __proto__ (prototype).
+
+*/
+	var objR = {"x": 10};
+	human.prototype = objR;
+	var hero = new human("hero", 98);
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3</title>
+</head>
+<body>
+<script type="text/javascript">
+	//через прототип. Здесь свойства
+	function Player (name, hp) {
+		this.name = name;
+		this.hp = hp;
+		this.run = 0;
+		this.age = 0;
+	}
+	//здесь методы
+	Player.prototype.running = function(step){
+		this.run += step;
+		alert(this.name + ': прошел ' + this.run + " шагов");
+	};
+
+	Player.prototype.yearsOld = function(years){
+		this.age += years;
+		alert(this.name + ': ' + this.age + " лет");
+	};
+
+	var hero = new Player ("Герой", 100);
+	hero.running(10);
+	hero.yearsOld(18);
+	console.log(hero);
+
+	var enemy = new Player("Зомби", 75);
+	enemy.running(6);
+	enemy.yearsOld(35);
+	console.log(enemy);
+
+	var friend = new Player("Друг", 70);
+	friend.running(5);
+	friend.yearsOld(45);
+	console.log(friend);
+
+</script>
+</body>
+</html>
